@@ -1,10 +1,10 @@
-package projectEcobike.ecobike_Backend;
+package microservice.apigateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EcobikeBackendApplicationTests {
+class ApiGatewayApplicationTests {
 
 	@Test
 	void contextLoads() {
