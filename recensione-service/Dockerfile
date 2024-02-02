@@ -5,4 +5,4 @@ COPY ${JAR_FILE} app.jar
 CMD ["java", "-jar", "app.jar"]
 
 # docker build -t user-service .
-# docker run -d -p 8081:8081 --name="user-service" user-service
+# docker run -d -p 8082:8082 --name="recensione-service" recensione-service
