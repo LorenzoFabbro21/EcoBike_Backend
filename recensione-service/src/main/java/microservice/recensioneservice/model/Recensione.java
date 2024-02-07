@@ -2,30 +2,30 @@ package microservice.recensioneservice.model;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name = "recensione")
+@Table(name = "review")
 public class Recensione {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "testo")
-    private String testo;
+    @Column(name = "text")
+    private String text;
 
-    @Column(name = "valutazione")
-    private int valutazione;
+    @Column(name = "score")
+    private int score;
 
-    @Column(name = "idUtentePrivato")
-    private String idUtentePrivato; //Utente
+    @Column(name = "idUser")
+    private int idUser; //Utente
 
     public Recensione() {
 
     }
 
-    public Recensione(String testo, int valutazione, String idUtentePrivato) {
-        this.testo = testo;
-        this.valutazione = valutazione;
-        this.idUtentePrivato = idUtentePrivato;
+    public Recensione(String text, int score, int idUser) {
+        this.text = text;
+        this.score = score;
+        this.idUser = idUser;
     }
 
     public long getId() {
@@ -36,27 +36,27 @@ public class Recensione {
         this.id = id;
     }
 
-    public String getTesto() {
-        return testo;
+    public String getText() {
+        return text;
     }
 
-    public void setTesto(String testo) {
-        this.testo = testo;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public int getValutazione() {
-        return valutazione;
+    public int getScore() {
+        return score;
     }
 
-    public void setValutazione(int valutazione) {
-        this.valutazione = valutazione;
+    public void setScore(int score) {
+        this.score = score;
     }
 
-    public String getIdUtentePrivato() {
-        return idUtentePrivato;
+    public int getIdUser() {
+        return idUser;
     }
 
-    public void setIdUtentePrivato(String idUtentePrivato) {
-        this.idUtentePrivato = idUtentePrivato;
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 }
