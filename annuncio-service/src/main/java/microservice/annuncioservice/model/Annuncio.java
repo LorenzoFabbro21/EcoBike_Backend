@@ -19,14 +19,18 @@ public abstract class Annuncio {
     @Column(name = "id_user")
     private int id_user;
 
+    @Column(name = "type")
+    private String type;
+
     public Annuncio() {
     }
 
-    public Annuncio(long id, int price, int id_bike, int id_user) {
+    public Annuncio(long id, int price, int id_bike, int id_user, String type) {
         this.id = id;
         this.price = price;
         this.id_bike = id_bike;
         this.id_user = id_user;
+        this.type = type;
     }
 
     public long getId() {
@@ -59,5 +63,13 @@ public abstract class Annuncio {
 
     public void setId_user(int id_user) {
         this.id_user = id_user;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
