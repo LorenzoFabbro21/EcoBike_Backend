@@ -8,7 +8,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "nome")
+    @Column(name = "nomeProvaK3Diff")
     private String nome;
 
     @Column(name = "cognome")
