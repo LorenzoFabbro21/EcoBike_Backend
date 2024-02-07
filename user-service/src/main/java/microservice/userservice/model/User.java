@@ -2,7 +2,10 @@ package microservice.userservice.model;
 
 import jakarta.persistence.*;
 
-public class User {
+@Entity
+@Table(name = "user")
+public abstract class User {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,15 +26,18 @@ public class User {
     @Column(name = "telefono")
     private int telefono;
 
+    @Column(name = "type")
+    private String type;
     public User() {
     }
 
-    public User(String nome, String cognome, String mail, String password, int telefono) {
+    public User(String nome, String cognome, String mail, String password, int telefono, String type) {
         this.nome = nome;
         this.cognome = cognome;
         this.mail = mail;
         this.password = password;
         this.telefono = telefono;
+        this.type = type;
     }
 
     public long getId() {
@@ -80,5 +86,13 @@ public class User {
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
