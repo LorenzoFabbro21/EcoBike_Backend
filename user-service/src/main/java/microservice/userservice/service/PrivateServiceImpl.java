@@ -55,7 +55,7 @@ public class PrivateServiceImpl implements PrivateService {
             Private.setMail(userprivate.getMail());
             Private.setPassword(userprivate.getPassword());
             Private.setTelefono(userprivate.getTelefono());
-
+            Private.setType((userprivate.getType()));
             repository.save(Private);
             return new ResponseEntity<>(repository.save(Private), HttpStatus.OK);
         }

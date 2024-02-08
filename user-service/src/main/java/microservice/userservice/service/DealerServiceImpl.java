@@ -55,7 +55,7 @@ public class DealerServiceImpl implements DealerService {
             Dealer.setMail(dealer.getMail());
             Dealer.setPassword(dealer.getPassword());
             Dealer.setTelefono(dealer.getTelefono());
-
+            Dealer.setType(dealer.getType());
             repository.save(Dealer);
             return new ResponseEntity<>(repository.save(Dealer), HttpStatus.OK);
         }

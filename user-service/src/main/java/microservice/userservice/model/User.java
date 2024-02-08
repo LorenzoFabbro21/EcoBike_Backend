@@ -6,12 +6,11 @@ import jakarta.persistence.*;
 @Table(name = "user")
 public abstract class User {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "nomeProvaK3Diff")
+    @Column(name = "nome")
     private String nome;
 
     @Column(name = "cognome")
