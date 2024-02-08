@@ -32,7 +32,7 @@ public class DealerController {
         else return null;
     }
 
-    @GetMapping("/dealers")
+    @GetMapping("/dealer")
     public List<Dealer> getAllDealer() {
         System.out.println("Get all dealers...");
         List<Dealer> dealer = new ArrayList<>();
@@ -46,7 +46,7 @@ public class DealerController {
         ResponseEntity<String> response = dealerService.deleteDealer(id);
         return response;
     }
-    @DeleteMapping("/dealers/delete")
+    @DeleteMapping("/dealer/delete")
     public ResponseEntity<String> deleteAllDealers() {
         System.out.println("Delete All Dealers...");
 
@@ -55,7 +55,7 @@ public class DealerController {
         return response;
     }
 
-    @PutMapping("/dealers/{id}")
+    @PutMapping("/dealer/{id}")
     public ResponseEntity<Dealer> updateDealer(@PathVariable("id") long id, @RequestBody Dealer dealer) {
         System.out.println("Update Dealer with ID = " + id + "...");
         ResponseEntity<Dealer> response = dealerService.updateDealer(id, dealer);

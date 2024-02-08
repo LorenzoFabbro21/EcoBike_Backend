@@ -1,6 +1,6 @@
 version: '3'
 services:
-  dbpostgresql:
+  postgres:
     container_name: postgres_container
     image: 'postgres:latest'
     environment:
@@ -26,7 +26,7 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     depends_on:
-      - dbpostgresql
+      - postgres
     networks:
       - opnet
   rabbitmq:
@@ -43,7 +43,7 @@ services:
     ports:
       - "8761:8761"
     depends_on:
-      - dbpostgresql
+      - postgres
     networks:
       - opnet
 

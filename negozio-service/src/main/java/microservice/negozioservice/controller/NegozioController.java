@@ -20,14 +20,14 @@ public class NegozioController {
 
     private NegozioService negozioService;
 
-    @PostMapping(value = "/negozi/create")
+    @PostMapping(value = "/shop/create")
     public Negozio postNegozio(@RequestBody Negozio negozio) {
 
         Negozio _Negozio = negozioService.saveShop(new Negozio(negozio.getId(), negozio.getName(), negozio.getCity(), negozio.getAddress(), negozio.getPhone_number(), negozio.getId_user()));
         return _Negozio;
     }
 
-    @GetMapping("/negozi/{id}")
+    @GetMapping("/shop/{id}")
     public Negozio getNegozio(@PathVariable("id") long id) {
         System.out.println("Get shop...");
         Negozio negozio = new Negozio();
@@ -37,7 +37,7 @@ public class NegozioController {
         else return null;
     }
 
-    @GetMapping("/negozi")
+    @GetMapping("/shop")
     public List<Negozio> getAllNegozi() {
         System.out.println("Get all shop...");
         List<Negozio> negozi = new ArrayList<>();
@@ -45,13 +45,13 @@ public class NegozioController {
         return negozi;
     }
 
-    @DeleteMapping("/negozi/{id}")
+    @DeleteMapping("/shop/{id}")
     public ResponseEntity<String> deleteNegozio(@PathVariable("id") long id) {
         System.out.println("Delete Negozio with ID = " + id + "...");
         ResponseEntity<String> response = negozioService.deleteNegozio(id);
         return response;
     }
-    @DeleteMapping("/negozi/delete")
+    @DeleteMapping("/shop/delete")
     public ResponseEntity<String> deleteAllNegozios() {
         System.out.println("Delete All shop...");
 
@@ -60,7 +60,7 @@ public class NegozioController {
         return response;
     }
 
-    @PutMapping("/negozi/{id}")
+    @PutMapping("/shop/{id}")
     public ResponseEntity<Negozio> updateNegozio(@PathVariable("id") long id, @RequestBody Negozio negozio) {
         System.out.println("Update shop with ID = " + id + "...");
         ResponseEntity<Negozio> response = negozioService.updateNegozio(id,negozio);

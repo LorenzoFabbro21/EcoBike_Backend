@@ -33,7 +33,7 @@ public class PrivateController {
         else return null;
     }
 
-    @GetMapping("/privates")
+    @GetMapping("/private")
     public List<Private> getAllPrivate() {
         System.out.println("Get all Privates...");
         List<Private> userprivate = new ArrayList<>();
@@ -47,7 +47,7 @@ public class PrivateController {
         ResponseEntity<String> response = privateService.deletePrivate(id);
         return response;
     }
-    @DeleteMapping("/privates/delete")
+    @DeleteMapping("/private/delete")
     public ResponseEntity<String> deleteAllPrivates() {
         System.out.println("Delete All Privates...");
 
@@ -56,7 +56,7 @@ public class PrivateController {
         return response;
     }
 
-    @PutMapping("/privates/{id}")
+    @PutMapping("/private/{id}")
     public ResponseEntity<Private> updatePrivates(@PathVariable("id") long id, @RequestBody Private userprivate) {
         System.out.println("Update Dealer with ID = " + id + "...");
         ResponseEntity<Private> response = privateService.updatePrivate(id, userprivate);
